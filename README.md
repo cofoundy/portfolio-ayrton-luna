@@ -2,7 +2,7 @@
 
 Portafolio profesional.
 
-**Live:** *Se actualizará después del deploy*
+**Live:** [ayrton-luna.cofoundy.dev](https://ayrton-luna.cofoundy.dev/)
 
 ## Tech Stack
 
