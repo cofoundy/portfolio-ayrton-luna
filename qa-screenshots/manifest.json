@@ -1,0 +1,138 @@
+{
+  "url": "http://localhost:4321",
+  "timestamp": "2026-04-21T16:23:02.025Z",
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "full": {
+      "file": "desktop-full.png",
+      "fileSize": "809KB"
+    },
+    "sections": [
+      {
+        "file": "desktop-hero.png",
+        "section": "hero",
+        "height": 961,
+        "fileSize": "179KB"
+      },
+      {
+        "file": "desktop-about.png",
+        "section": "about",
+        "height": 584,
+        "fileSize": "100KB"
+      },
+      {
+        "file": "desktop-services.png",
+        "section": "services",
+        "height": 1214,
+        "fileSize": "158KB"
+      },
+      {
+        "file": "desktop-methodology.png",
+        "section": "methodology",
+        "height": 808,
+        "fileSize": "97KB"
+      },
+      {
+        "file": "desktop-footer-4.png",
+        "section": "footer-4",
+        "height": 20,
+        "fileSize": "2KB"
+      },
+      {
+        "file": "desktop-markets.png",
+        "section": "markets",
+        "height": 672,
+        "fileSize": "49KB"
+      },
+      {
+        "file": "desktop-experience.png",
+        "section": "experience",
+        "height": 844,
+        "fileSize": "121KB"
+      },
+      {
+        "file": "desktop-contact.png",
+        "section": "contact",
+        "height": 500,
+        "fileSize": "86KB"
+      },
+      {
+        "file": "desktop-footer-8.png",
+        "section": "footer-8",
+        "height": 205,
+        "fileSize": "17KB"
+      }
+    ],
+    "pageHeight": 5796
+  },
+  "mobile": {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "full": {
+      "file": "mobile-full.png",
+      "fileSize": "660KB"
+    },
+    "sections": [
+      {
+        "file": "mobile-hero.png",
+        "section": "hero",
+        "height": 1151,
+        "fileSize": "104KB"
+      },
+      {
+        "file": "mobile-about.png",
+        "section": "about",
+        "height": 1143,
+        "fileSize": "96KB"
+      },
+      {
+        "file": "mobile-services.png",
+        "section": "services",
+        "height": 2252,
+        "fileSize": "140KB"
+      },
+      {
+        "file": "mobile-methodology.png",
+        "section": "methodology",
+        "height": 1511,
+        "fileSize": "92KB"
+      },
+      {
+        "file": "mobile-footer-4.png",
+        "section": "footer-4",
+        "height": 20,
+        "fileSize": "2KB"
+      },
+      {
+        "file": "mobile-markets.png",
+        "section": "markets",
+        "height": 854,
+        "fileSize": "45KB"
+      },
+      {
+        "file": "mobile-experience.png",
+        "section": "experience",
+        "height": 1190,
+        "fileSize": "100KB"
+      },
+      {
+        "file": "mobile-contact.png",
+        "section": "contact",
+        "height": 624,
+        "fileSize": "67KB"
+      },
+      {
+        "file": "mobile-footer-8.png",
+        "section": "footer-8",
+        "height": 289,
+        "fileSize": "15KB"
+      }
+    ],
+    "pageHeight": 9021
+  }
+}
