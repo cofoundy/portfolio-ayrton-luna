@@ -1,0 +1,151 @@
+% Harvard-Format Professional CV — Ayrton Joao Luna Zapata
+% Compile with: xelatex cv-luna.tex
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.6in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% --- Fonts (macOS system fonts) ---
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica Neue}
+
+% --- Colors ---
+\definecolor{headrule}{HTML}{2c3e50}
+\definecolor{linkblue}{HTML}{1a5276}
+
+% --- Hyperlinks ---
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}}
+
+% --- Section Formatting ---
+\titleformat{\section}
+  {\large\bfseries\centering}
+  {}
+  {0em}
+  {\vspace{-0.4em}\hrulefill\quad}[\quad\hrulefill\vspace{-0.4em}]
+\titlespacing{\section}{0pt}{0.6em}{0.3em}
+
+% --- List Formatting ---
+\setlist[itemize]{nosep, left=0pt, label=\textbullet, itemsep=1pt, topsep=2pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+% --- Custom Commands ---
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \par\nopagebreak
+  \textit{#3} \hfill \textit{#4} \par\nopagebreak
+}
+
+\begin{document}
+
+% ============================================
+% HEADER
+% ============================================
+\begin{center}
+  {\LARGE\bfseries Ayrton Joao Luna Zapata} \\[4pt]
+  \faIcon{map-marker-alt}\enspace Perú
+  \quad\faIcon{envelope}\enspace \href{mailto:ayrtonenlapauta@gmail.com}{ayrtonenlapauta@gmail.com}
+  \quad\faIcon{phone}\enspace +51 907 713 966
+  \\[2pt]
+  \faIcon{linkedin}\enspace \href{https://www.linkedin.com/in/ayrtonlunazapata/}{linkedin.com/in/ayrtonlunazapata}
+\end{center}
+
+\vspace{-0.4em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{-0.8em}
+
+% ============================================
+% PERFIL PROFESIONAL
+% ============================================
+\section{Perfil Profesional}
+
+\noindent Especialista en Marketing Digital y Publicidad Online con más de 10 años de experiencia ejecutando estrategias de generación de leads para clínicas, negocios locales y marcas personales. Experto en Meta Ads aplicado al sector salud (clínicas y odontología), con trayectoria ejecutando campañas para marcas en 9 países de América. Consultor externo y docente en Progresivo Academy.
+
+% ============================================
+% EXPERIENCIA
+% ============================================
+\section{Experiencia Profesional}
+
+\entry{Consultor Independiente --- Marketing Digital}{Perú / LATAM}{Especialista en Meta Ads \& Media Buyer}{2020 --- Presente}
+\begin{itemize}
+  \item Gestiona campañas de Meta Ads para clínicas y negocios locales en 9 países (Perú, EE.UU., Chile, Guatemala, México, Ecuador, Bolivia, Argentina y Colombia), adaptando estrategias por mercado y tipo de cliente.
+  \item Diseña estrategias de generación de leads enfocadas en calidad sobre volumen, optimizando segmentación avanzada y creatividades para reducir costo por lead en el sector salud.
+  \item Desarrolla el ciclo completo de campaña: análisis de negocio y competencia, definición de estrategia, creación de copies y guiones, lanzamiento, optimización diaria/semanal y escalamiento de campañas rentables.
+  \item Produce creatividades publicitarias integrales --- flyers, copies persuasivos y guiones estructurados para anuncios en video --- alineados al embudo de conversión del cliente.
+  \item Construye sitios web en WordPress + Elementor Pro orientados a conversión, integrando WhatsApp, formularios y embudos de captación para cerrar el loop entre publicidad y venta.
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Progresivo Academy}{Perú (Online)}{Consultor Externo \& Docente de Publicidad Digital}{2022 --- Presente}
+\begin{itemize}
+  \item Capacita a emprendedores y profesionales en publicidad digital y Meta Ads mediante cursos con casos reales y estrategias actualizadas de generación de clientes.
+  \item Dicta formaciones en modalidad 1-a-1, grupal y online, cubriendo niveles Básico (inicio desde cero) e Intermedio/Avanzado (escalamiento de inversión publicitaria).
+  \item Asesora estratégicamente a estudiantes y alumnos del programa sobre lanzamiento, optimización y escalamiento de sus propias campañas publicitarias.
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Consultoría Estratégica Digital}{Perú / LATAM}{Consultor de Marketing Digital para Sector Salud}{2018 --- Presente}
+\begin{itemize}
+  \item Especializa su práctica en clínicas y odontología, generando planes estratégicos personalizados para negocios del sector salud que buscan captar pacientes de forma sostenida.
+  \item Audita campañas digitales en curso para empresas que invierten sin resultados, identificando oportunidades de mejora y entregando recomendaciones accionables.
+  \item Acompaña a emprendedores en la definición de estrategia previa a la inversión publicitaria, reduciendo pérdida de presupuesto en campañas mal configuradas.
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Agencias de Publicidad Digital}{Perú}{Especialista en Publicidad Online}{2014 --- 2020}
+\begin{itemize}
+  \item Ejecutó campañas publicitarias de performance para múltiples cuentas en entorno de agencia, desarrollando fundamentos operativos en gestión de medios pagados.
+  \item Operó plataformas de publicidad digital incluyendo Meta Ads, Google Ads y TikTok Ads, adaptando estrategias al comportamiento de cada canal y audiencia.
+  \item Construyó expertise en conversión y segmentación avanzada que consolidó la base técnica de su posterior práctica independiente.
+\end{itemize}
+\vspace{0.3em}
+
+% ============================================
+% SERVICIOS \& ESPECIALIZACIÓN
+% ============================================
+\section{Servicios \& Especialización}
+
+\entry{Consultoría Estratégica Digital}{Remoto / Presencial}{Análisis de negocio \& plan publicitario}{Ongoing}
+\begin{itemize}
+  \item Audita presencia digital completa del cliente: activos, campañas activas, competencia y oportunidades de mejora identificables.
+  \item Entrega plan estratégico personalizado con recomendaciones accionables, orientado a reducir errores y pérdida de presupuesto en publicidad.
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Media Buyer --- Meta Ads}{Remoto}{Gestión integral de campañas de leads}{Ongoing}
+\begin{itemize}
+  \item Administra el ciclo completo de Meta Ads: configuración estratégica, segmentación avanzada desde el anuncio, monitoreo diario/semanal, ajustes de presupuesto y escalamiento.
+  \item Incluye creatividades --- flyers, copies persuasivos y guiones para video --- optimizados para generación de leads cualificados en sector salud y negocios locales.
+\end{itemize}
+\vspace{0.3em}
+
+\entry{Desarrollo Web Orientado a Conversión}{Remoto}{WordPress \& Elementor Pro}{Ongoing}
+\begin{itemize}
+  \item Diseña y construye sitios web profesionales adaptados a la marca del cliente, con estructura pensada para conversión (leads o ventas).
+  \item Integra WhatsApp, formularios y embudos, optimizando experiencia de usuario como soporte al tráfico pagado de Meta Ads.
+\end{itemize}
+\vspace{0.3em}
+
+% ============================================
+% SKILLS
+% ============================================
+\section{Habilidades \& Adicional}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Publicidad Digital:} & Meta Ads (Facebook \& Instagram Ads), Google Ads, TikTok Ads, generación de leads, segmentación avanzada, optimización de campañas, escalamiento \\
+\textbf{Creatividad \& Copy:} & Copy persuasivo, diseño de flyers publicitarios, guiones para anuncios en video, estrategia de mensaje por embudo \\
+\textbf{Desarrollo Web:} & WordPress, Elementor Pro, integración WhatsApp Business, formularios de captación, embudos de conversión \\
+\textbf{Sectores:} & Salud (clínicas, odontología), negocios locales, marcas personales, emprendedores \\
+\textbf{Mercados:} & Perú, Estados Unidos, Chile, Guatemala, México, Ecuador, Bolivia, Argentina, Colombia \\
+\textbf{Docencia:} & Formación 1-a-1, sesiones grupales, modalidad online, niveles Básico e Intermedio/Avanzado \\
+\textbf{Idiomas:} & Español (nativo) \\
+\end{tabularx}
+
+\end{document}

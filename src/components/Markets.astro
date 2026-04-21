@@ -1,0 +1,63 @@
+---
+import { siteConfig } from "../config";
+const sectores = siteConfig.sectores || [];
+const paises = siteConfig.paises || [];
+---
+
+{(sectores.length > 0 || paises.length > 0) && (
+  <section id="markets" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider mb-3" style={`color: ${siteConfig.highlightColor}`}>
+          Alcance
+        </p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl mx-auto" style={`color: ${siteConfig.accentColor}`}>
+          Sectores y mercados atendidos
+        </h2>
+        <div class="w-16 h-1 mt-5 mx-auto rounded-full" style={`background-color: ${siteConfig.highlightColor}`}></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+        <!-- Sectores -->
+        {sectores.length > 0 && (
+          <div class="reveal-left">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-3" style={`color: ${siteConfig.accentColor}`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              Sectores
+            </h3>
+            <ul class="space-y-3">
+              {sectores.map((s, i) => (
+                <li class={`reveal stagger-${i + 1} flex items-start gap-3 p-4 rounded-xl bg-white`} style={`border: 1px solid ${siteConfig.accentColor}15`}>
+                  <div class="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full" style={`background-color: ${siteConfig.highlightColor}`}></div>
+                  <span class="text-gray-700 font-medium">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Países -->
+        {paises.length > 0 && (
+          <div class="reveal-right">
+            <h3 class="text-lg font-bold mb-6 flex items-center gap-3" style={`color: ${siteConfig.accentColor}`}>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Países
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {paises.map((p, i) => (
+                <span class={`reveal stagger-${(i % 6) + 1} inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white transition-colors duration-200 hover:shadow-md`} style={`color: ${siteConfig.accentColor}; border: 1px solid ${siteConfig.accentColor}20`}>
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}

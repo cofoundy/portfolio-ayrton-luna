@@ -1,0 +1,74 @@
+---
+import { siteConfig } from "../config";
+const hasServices = siteConfig.projects && siteConfig.projects.length > 0;
+
+// Iconos por servicio (mapeados por nombre)
+const iconMap = {
+  "Consultoría Estratégica": `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>`,
+  "Media Buyer (Meta Ads)": `<circle cx="12" cy="12" r="9" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/>`,
+  "Capacitaciones": `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>`,
+  "Desarrollo Web": `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+};
+---
+
+{hasServices && (
+  <section id="services" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-14 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider mb-3" style={`color: ${siteConfig.highlightColor}`}>
+          Servicios
+        </p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight max-w-3xl mx-auto" style={`color: ${siteConfig.accentColor}`}>
+          Soluciones enfocadas en resultados reales
+        </h2>
+        <div class="w-16 h-1 mt-5 mx-auto rounded-full" style={`background-color: ${siteConfig.highlightColor}`}></div>
+      </div>
+
+      <!-- Grid 2x2 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {siteConfig.projects.map((service, index) => (
+          <a
+            href={service.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`reveal stagger-${index + 1} group card-hover relative p-8 rounded-2xl bg-white transition-all duration-300 hover:shadow-xl`}
+            style={`border: 1px solid ${siteConfig.accentColor}15`}
+          >
+            <!-- Icon -->
+            <div
+              class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+              style={`background-color: ${siteConfig.accentColor}10; color: ${siteConfig.accentColor}`}
+            >
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={iconMap[service.name] || iconMap["Consultoría Estratégica"]}></svg>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold mb-3" style={`color: ${siteConfig.accentColor}`}>
+              {service.name}
+            </h3>
+            <p class="text-sm md:text-base text-gray-600 mb-5 leading-relaxed">
+              {service.description}
+            </p>
+
+            {service.skills && service.skills.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-5">
+                {service.skills.map((skill) => (
+                  <span class="text-xs px-2.5 py-1 rounded-full font-medium" style={`background-color: ${siteConfig.accentColor}08; color: ${siteConfig.accentColor}`}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div class="flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3" style={`color: ${siteConfig.highlightColor}`}>
+              Conversemos
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

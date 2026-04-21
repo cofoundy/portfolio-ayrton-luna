@@ -1,0 +1,100 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Methodology from "../components/Methodology.astro";
+import Markets from "../components/Markets.astro";
+import Experience from "../components/Experience.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppFloat from "../components/WhatsAppFloat.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+    <meta name="keywords" content="marketing digital, Meta Ads, publicidad online, generación de leads, Ayrton Luna, publicidad para clínicas, consultor marketing digital, Perú" />
+    <link rel="canonical" href="https://ayrton-luna.cofoundy.dev/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{siteConfig.name} - {siteConfig.title}</title>
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta property="og:description" content={siteConfig.description} />
+    {Astro.site && <meta property="og:image" content={new URL('/og.jpg', Astro.site).href} />}
+    {Astro.site && <meta property="og:url" content={Astro.site.href} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta name="twitter:description" content={siteConfig.description} />
+    {Astro.site && <meta name="twitter:image" content={new URL('/og.jpg', Astro.site).href} />}
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": siteConfig.name,
+      "jobTitle": siteConfig.title,
+      "description": siteConfig.description,
+      "url": "https://ayrton-luna.cofoundy.dev/",
+      "image": "https://ayrton-luna.cofoundy.dev/profile.png",
+      "sameAs": [siteConfig.social.linkedin],
+      "email": siteConfig.social.email,
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Progresivo Academy"
+      },
+      "knowsAbout": ["Meta Ads", "Google Ads", "TikTok Ads", "Digital Marketing", "Lead Generation", "Healthcare Marketing"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PE"
+      }
+    })} />
+
+    <style is:global>
+      html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+      <Methodology />
+      <Markets />
+      <Experience />
+      <FinalCTA />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("revealed");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+      );
+      document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale").forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

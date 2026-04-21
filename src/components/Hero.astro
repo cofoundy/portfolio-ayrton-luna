@@ -1,0 +1,110 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section
+  id="hero"
+  class="relative py-12 md:py-20 lg:py-28 bg-white overflow-hidden"
+>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <!-- Text Content (left) -->
+      <div class="order-2 md:order-1 reveal-left relative">
+        <!-- Floating play icon (decorative, like Felipe's reference) -->
+        <div
+          class="absolute -top-10 -left-2 md:-top-12 md:-left-4 w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
+          style={`background-color: ${siteConfig.highlightColor}`}
+          aria-hidden="true"
+        >
+          <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+
+        <p
+          class="text-base md:text-lg font-medium mb-4"
+          style={`color: ${siteConfig.highlightColor}`}
+        >
+          ¡Hola, soy {siteConfig.name}!
+        </p>
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6"
+          style={`color: ${siteConfig.accentColor}`}
+        >
+          Ayudo a clínicas y negocios a <span class="relative inline-block">generar clientes<span class="absolute left-0 right-0 -bottom-1 h-1 rounded-full opacity-30" style={`background-color: ${siteConfig.highlightColor}`}></span></span> con publicidad digital.
+        </h1>
+        <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-lg">
+          {siteConfig.tagline}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+          <a
+            href={siteConfig.social.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-white font-semibold transition-all duration-200 hover:scale-105 shadow-lg"
+            style={`background-color: ${siteConfig.accentColor}`}
+          >
+            Agenda tu asesoría
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-medium transition-colors duration-200"
+            style={`color: ${siteConfig.accentColor}; border: 2px solid ${siteConfig.accentColor}20`}
+          >
+            Ver servicios
+          </a>
+        </div>
+
+        <!-- Social inline -->
+        <div class="flex gap-3 mt-8">
+          {siteConfig.social?.linkedin && (
+            <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:opacity-80" style={`background-color: ${siteConfig.accentColor}; color: white`} aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          )}
+          {siteConfig.social?.email && (
+            <a href={`mailto:${siteConfig.social.email}`} class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:opacity-80" style={`background-color: ${siteConfig.accentColor}; color: white`} aria-label="Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Photo (right) -->
+      <div class="order-1 md:order-2 flex justify-center md:justify-end reveal-right">
+        <div class="relative">
+          <!-- Soft backdrop blob -->
+          <div
+            class="absolute inset-0 rounded-3xl transform rotate-3 scale-95"
+            style={`background: linear-gradient(135deg, ${siteConfig.accentColor}15 0%, ${siteConfig.highlightColor}20 100%)`}
+          ></div>
+          <img
+            src="/profile.png"
+            alt={siteConfig.name}
+            class="relative w-64 md:w-80 lg:w-96 rounded-2xl"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    {siteConfig.stats && siteConfig.stats.length > 0 && (
+      <div class="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-10 border-t reveal stagger-2" style={`border-color: ${siteConfig.accentColor}15`}>
+        {siteConfig.stats.map((stat) => (
+          <div class="text-center md:text-left">
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold" style={`color: ${siteConfig.accentColor}`}>
+              {stat.value}
+            </div>
+            <div class="text-xs md:text-sm text-gray-600 mt-2 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
